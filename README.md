@@ -1,107 +1,119 @@
-# Pesquisa-Operacional
+# 🧮 Otimização de Planejamento de Treino com Programação Linear Inteira (MILP)
 
 
-🏋️ Otimização do Planejamento de Treino Baseada no Custo Cardíaco
 
-Este projeto aplica conceitos de Pesquisa Operacional para otimizar a montagem de uma divisão semanal de treinos, considerando o custo cardíaco dos exercícios e a distribuição equilibrada entre grupos musculares.
+## 📌 Visão Geral
 
-O problema é modelado como um problema de otimização inteira (MILP) e resolvido utilizando o solver Gurobi, com suporte de bibliotecas como pandas, matplotlib e numpy para manipulação e visualização dos dados.
+Este projeto aplica técnicas de **Pesquisa Operacional** e **Otimização Matemática** para resolver um problema real de tomada de decisão: selecionar um conjunto ótimo de exercícios que minimize o custo fisiológico (custo cardíaco) e, ao mesmo tempo, mantenha equilíbrio entre grupos musculares.
 
-🎯 Objetivo
+O problema foi modelado como um **Problema de Programação Linear Inteira Mista (MILP)** e resolvido utilizando o **Gurobi Optimizer** em Python.
 
-Construir automaticamente uma divisão de treinos que:
+Mais do que um projeto aplicado ao contexto de treino físico, este trabalho demonstra a capacidade de estruturar problemas reais como modelos matemáticos formais e solucioná-los com ferramentas industriais de otimização.
 
-Minimize o custo cardíaco total
 
-Respeite restrições de frequência por grupo muscular
 
-Mantenha equilíbrio na distribuição dos estímulos
+## 🎯 Problema de Decisão
 
-Considere múltiplos grupos musculares por exercício
+No planejamento de treinos existe um conflito natural entre:
 
-Produza uma solução viável e eficiente do ponto de vista fisiológico
+- Intensidade (custo cardíaco)
+- Cobertura adequada dos grupos musculares
+- Volume mínimo e máximo por grupo
+- Estrutura e coerência do planejamento semanal
 
-📊 Etapas do Projeto
-1️⃣ Leitura e Processamento de Dados
+A proposta do projeto é substituir decisões heurísticas por um modelo matemático que:
 
-Importação de planilhas públicas (Google Sheets)
+✔ Minimize o custo cardíaco total  
+✔ Garanta frequência mínima e máxima por grupo muscular  
+✔ Considere exercícios que atuam em múltiplos grupos  
+✔ Mantenha consistência estrutural  
 
-Tratamento e filtragem dos dados
 
-Mapeamento dos exercícios para seus respectivos grupos musculares
 
-Cálculo da frequência de exercícios por grupo
+## 🧠 Modelagem Matemática
 
-2️⃣ Análise Exploratória
 
-Visualização da distribuição dos exercícios por grupo muscular
 
-Identificação de possíveis desbalanceamentos na base de dados
+### Variável de Decisão
 
-3️⃣ Modelagem Matemática
+Variável binária:
 
-O problema é formulado como um modelo de Programação Linear Inteira Mista:
+xᵢ = 1, se o exercício i for selecionado  
+xᵢ = 0, caso contrário  
 
-Variáveis de decisão:
 
-Seleção de exercícios
 
-Função objetivo:
+### Função Objetivo
 
-Minimizar o custo cardíaco total do planejamento
+Minimizar o custo cardíaco total:
 
-Restrições incluem:
+min Σ cᵢ xᵢ
 
-Quantidade mínima/máxima de exercícios por grupo muscular
+Onde:
 
-Distribuição adequada entre grupos
+- cᵢ = custo cardíaco do exercício i  
 
-Restrições estruturais do planejamento
 
-🧠 Ferramentas Utilizadas
 
-Python
+### Restrições
 
-Gurobi (solver de otimização)
+- Limite mínimo de exercícios por grupo muscular  
+- Limite máximo por grupo muscular  
+- Restrição opcional de quantidade total de exercícios  
+- Tratamento de exercícios que pertencem a múltiplos grupos  
 
-Pandas
+O modelo foi estruturado de forma escalável, permitindo a inclusão de novas restrições sem necessidade de reestruturação completa.
 
-NumPy
 
-Matplotlib
 
-OpenPyXL
+## 🛠 Tecnologias Utilizadas
 
-📈 Resultados
+- Python  
+- Gurobi Optimizer  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- OpenPyXL  
 
-O modelo gera automaticamente uma seleção otimizada de exercícios que:
 
-Reduz o custo cardíaco acumulado
 
-Mantém equilíbrio muscular
+## 📊 Pipeline do Projeto
 
-Respeita critérios de divisão definidos
+1. Importação e tratamento dos dados  
+2. Construção da matriz exercício × grupo muscular  
+3. Definição dos parâmetros do modelo  
+4. Implementação da formulação MILP  
+5. Execução do solver  
+6. Extração e análise da solução ótima  
 
-Pode ser adaptado para diferentes cenários (mais grupos, diferentes restrições, etc.)
 
-🚀 Possíveis Extensões
 
-Inserção de restrições relacionadas ao Sistema Nervoso Central (SNC)
+## 🚀 Competências Demonstradas
 
-Modelagem multiobjetivo (ex: custo cardíaco + volume total)
+- Modelagem matemática aplicada  
+- Formulação de problemas com variáveis binárias  
+- Implementação de Programação Linear Inteira  
+- Estruturação de sistemas com múltiplas restrições  
+- Pensamento analítico e sistêmico  
+- Tradução de problema real em modelo computacional  
 
-Personalização por nível (iniciante, intermediário, avançado)
 
-Interface para geração automática de planilhas
 
-Integração com banco de dados
+## 🔎 Aplicabilidade
 
-👥 Autores
+Embora aplicado ao contexto de treino físico, o modelo é estruturalmente equivalente a problemas como:
+
+- Alocação de recursos  
+- Planejamento de produção  
+- Escalonamento de tarefas  
+- Seleção de portfólio  
+- Distribuição balanceada sob restrições  
+
+
+
+## 👨‍💻 Autores
 
 Gabriel Henrique Silva Maia
-
 Igor Braga de Lima
-
 Talvani de Souza Barbosa
-
 Matheus Gregor Dias Carvalho Costa
