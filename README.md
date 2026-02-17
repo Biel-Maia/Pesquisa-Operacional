@@ -113,7 +113,7 @@ Embora aplicado ao contexto de treino físico, o modelo é estruturalmente equiv
 
 ## 👨‍💻 Autores
 
-Gabriel Henrique Silva Maia
-Igor Braga de Lima
-Talvani de Souza Barbosa
-Matheus Gregor Dias Carvalho Costa
+- Gabriel Henrique Silva Maia
+- Igor Braga de Lima
+- Talvani de Souza Barbosa
+- Matheus Gregor Dias Carvalho Costa
